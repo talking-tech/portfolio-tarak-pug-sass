@@ -1,0 +1,186 @@
+*
+    margin: 0
+    padding: 0
+    list-style: none
+    text-decoration: none
+    font-size: 24px
+    scroll-behavior: smooth
+
+.background__banner
+    scroll-snap-align: start
+    position: fixed
+    min-width: 100vw
+    min-height: 100vh
+    background-color: red
+    background: url("https://talking-tech.github.io/amazing-portfolio/assets/img/bg6.jpg")
+    background-size: cover
+    background-position: fixed
+    top:0
+    z-index: -100
+    
+
+.clouds
+    background: url("https://talking-tech.github.io/amazing-portfolio/assets/img/clouds.png")
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-attachment: fixed
+    animation: animatecloud 20s linear infinite
+    background-blend-mode: multiply
+    z-index: -90
+
+@keyframes animatecloud 
+    0%
+        background-position: 0px
+    100%
+        background-position: -5440px
+
+.header
+   overflow: hidden
+   position: fixed
+   top: 0
+   width: 100%
+   z-index: 1000
+
+.header__container
+    box-sizing: border-box
+    position: sticky
+    background-color:  rgba(255,255,255,.95)
+
+.header__navigation
+    position: relative
+    height: 80px   
+
+.logo,.logo:link,.logo:hover
+    display: inline-block
+    position: absolute
+    font-size: 1.5rem
+    line-height: 80px
+    left:50px   
+    color: rgb(60, 149, 165)
+    transition: all .2s
+    span 
+        color: brown
+    
+.navigation__list
+    float: right
+    margin-right: 25px
+    z-index: 950
+
+.navigation__items
+    display: inline-block
+    line-height: 80px
+    margin: 0 15px
+    
+
+.navigation__links,.navigation__links:link
+    position: relative
+    color: rgb(60, 149, 165)
+    font-size: .8rem
+    padding-bottom: 5px
+    letter-spacing: .1em
+    text-transform: capitalize
+    text-decoration: none
+
+.navigation__links:hover
+    color: rgb(23, 55, 61)
+.navigation__links:before
+    position: absolute
+    content: ''
+    left:0
+    bottom:0
+    height:3px
+    width: 100%
+    background: brown
+    transform: scaleX(0)
+    transform-origin: right
+    transition: transform .2s linear
+
+.navigation__links:hover:before
+    transform: scaleX(1)
+    transform-origin: left
+
+label #btn, label #cancel
+    color: black
+    font-size: 30px
+    float: right
+    line-height: 80px
+    margin-right: 40px
+    cursor: pointer
+    display: none
+
+#check
+    display: none
+
+@media ( max-width: 1118px )
+    .logo,.logo:link,.logo:hover
+        left: 25px
+
+
+@media ( max-width: 944px )
+    .logo,.logo:link,.logo:hover
+        left: 20px
+        font-size: 1.25rem
+
+    .navigation__links,.navigation__links:link
+        font-size: .75rem
+
+@media ( max-width: 860px )
+    label #btn
+        display: block
+    .navigation__list
+        position: fixed
+        width: 100%
+        height: 100vh
+        background: rgba(255,255,255,.95)
+        text-align: center
+        top: 80px
+        left:-100%
+        transition: all .5s
+        
+    .navigation__items
+        display: block
+        margin: 50px 0
+        line-height: 30px
+    .navigation__links
+        font-size: 1.5rem
+        font-weight: 500
+    #check:checked ~ .navigation__list
+        left:0
+    #check:checked ~ label #btn
+        display: none
+    #check:checked ~ label #cancel
+        display: block
+
+.socials
+    display: inline-block
+    right:5px
+    bottom:20px
+    background-color:  rgb(0,0,0,.3)
+    border-radius: 20px
+    border-bottom-left-radius: 0px
+    padding-bottom: 15px
+    padding-left: 5px
+    padding-right: 5px
+    position: fixed
+    z-index: 900
+    a
+        display: block
+        font: size 15px
+        text-decoration: none
+        border: 3px black solid
+        border-radius: 50%
+        min-width: 40px
+        margin-top: 10px
+        color: white
+        background-color: rgb(60, 149, 165)
+        transition: transform .2s linear
+        text-align: center
+        transform: scale(1)
+        
+    a:hover 
+        transform: translateX(-20%) scale(1.5)
+        color: white
+        background-color: brown
